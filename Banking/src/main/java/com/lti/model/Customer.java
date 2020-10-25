@@ -50,4 +50,7 @@ public class Customer {
 
 	@OneToOne(mappedBy="customer", cascade=CascadeType.ALL)
 	CustomerAddress address;
+	
+	@OneToOne(mappedBy="customer", cascade=CascadeType.ALL)
+	CustomerOccupation occupation;
 }
