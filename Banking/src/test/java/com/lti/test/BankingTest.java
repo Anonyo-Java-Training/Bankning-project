@@ -1,3 +1,5 @@
+package com.lti.test;
+
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
@@ -11,7 +13,7 @@ import com.lti.model.CustomerOccupation;
 
 public class BankingTest {
 
-	ApplyACustomerDao dao=new ApplyACustomerDao();
+ApplyACustomerDao dao=new ApplyACustomerDao();
 	
 	@Test
 	public void applyForBankAccount(){

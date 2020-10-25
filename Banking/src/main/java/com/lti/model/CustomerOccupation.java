@@ -17,7 +17,7 @@ public class CustomerOccupation{
 	
 	@OneToOne
 	@JoinColumn(name="customer_id")
-	Customer customer;
+	Customer customer1;
 
 	
 	@Column(name="occupation_type")
@@ -56,11 +56,11 @@ public class CustomerOccupation{
 	}
 
 	public Customer getCustomer() {
-		return customer;
+		return customer1;
 	}
 
 	public void setCustomer(Customer customer) {
-		this.customer = customer;
+		this.customer1 = customer;
 	}
 	
 	
