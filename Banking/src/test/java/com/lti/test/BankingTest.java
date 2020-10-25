@@ -22,6 +22,7 @@ ApplyACustomerDao dao=new ApplyACustomerDao();
 		customer.setLastName("Doe");
 		customer.setDateOfBirth(LocalDate.of(1978, 05, 31));
 		
+		
 		CustomerAddress customerAddress=new CustomerAddress();
 		customerAddress.setPermanentCity("Kolkata");
 		

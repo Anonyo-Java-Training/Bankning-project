@@ -13,7 +13,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbl_customer")
+@Table(name="tbl_customers")
 public class Customer {
 	@Id
 	@SequenceGenerator(name="custSeq", initialValue=1001, allocationSize=1)
@@ -51,7 +51,7 @@ public class Customer {
 	@OneToOne(mappedBy="customer", cascade=CascadeType.ALL)
 	CustomerAddress address;
 	
-	@OneToOne(mappedBy="customer1", cascade=CascadeType.ALL)
+	@OneToOne(mappedBy="customer", cascade=CascadeType.ALL)
 	CustomerOccupation occupation;
 
 	public long getCustomerId() {
