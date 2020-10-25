@@ -16,9 +16,9 @@ import javax.persistence.Table;
 @Table(name="tbl_customer")
 public class Customer {
 	@Id
-	@SequenceGenerator(name="deptSeq", initialValue=7001, allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="deptSeq")
-	@Column(name="department_id")
+	@SequenceGenerator(name="custSeq", initialValue=1001, allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="custSeq")
+	@Column(name="customer_id")
 	long customerId;
 	
 	@Column(name="first_name")
@@ -53,4 +53,102 @@ public class Customer {
 	
 	@OneToOne(mappedBy="customer", cascade=CascadeType.ALL)
 	CustomerOccupation occupation;
+
+	public long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(long customerId) {
+		this.customerId = customerId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getMiddleName() {
+		return middleName;
+	}
+
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getFatherName() {
+		return fatherName;
+	}
+
+	public void setFatherName(String fatherName) {
+		this.fatherName = fatherName;
+	}
+
+	public String getCustomerEmailId() {
+		return customerEmailId;
+	}
+
+	public void setCustomerEmailId(String customerEmailId) {
+		this.customerEmailId = customerEmailId;
+	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public LocalDate getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(LocalDate dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getAadharNumber() {
+		return aadharNumber;
+	}
+
+	public void setAadharNumber(String aadharNumber) {
+		this.aadharNumber = aadharNumber;
+	}
+
+	public String getCustomerPassword() {
+		return customerPassword;
+	}
+
+	public void setCustomerPassword(String customerPassword) {
+		this.customerPassword = customerPassword;
+	}
+
+	public CustomerAddress getAddress() {
+		return address;
+	}
+
+	public void setAddress(CustomerAddress address) {
+		this.address = address;
+	}
+
+	public CustomerOccupation getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(CustomerOccupation occupation) {
+		this.occupation = occupation;
+	}
+	
+	
 }
