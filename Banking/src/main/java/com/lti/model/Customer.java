@@ -47,6 +47,9 @@ public class Customer {
 	
 	@Column(name="customer_password")
 	String customerPassword;
+	
+	@Column(name="admin_approval_status")
+	String status;
 
 	@OneToOne(mappedBy="customer", cascade=CascadeType.ALL)
 	CustomerAddress address;
@@ -150,5 +153,12 @@ public class Customer {
 		this.occupation = occupation;
 	}
 	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	
 }
