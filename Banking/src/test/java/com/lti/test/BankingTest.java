@@ -17,6 +17,7 @@ public class BankingTest {
 
 ApplyACustomerDao dao=new ApplyACustomerDao();
 AdminRepositoryImplementation set_status=new AdminRepositoryImplementation();
+AdminRepositoryImplementation repo=new AdminRepositoryImplementation();
 	
 	@Test
 	public void applyForBankAccount(){
@@ -66,6 +67,16 @@ AdminRepositoryImplementation set_status=new AdminRepositoryImplementation();
 		AdminRepositoryImplementation repo=new AdminRepositoryImplementation();
 		repo.addAnAdmin(admin);
 		
+	}
+	
+	@Test
+	public void loginAdmin(){
+		boolean logged=repo.adminLogin(50002, "Mike@1234");
+		if(logged){
+			System.out.println("Logged in succesfully");
+		}else{
+			System.out.println("Login failed");
+		}
 	}
 	
 
