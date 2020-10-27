@@ -29,10 +29,32 @@ public class Transaction {
 
 	@Column(name = "debit_credit")
 	DebitCredit debitedOrCredited;
+	
+	@Column(name="to_account")
+	Account toAccount;
+	
+	@Column(name="from_Account")
+	Account fromAccount;
 
 	@ManyToOne
 	@JoinColumn(name = "account_number")
 	Account account;
+	
+	public Account getFromAccount() {
+		return fromAccount;
+	}
+
+	public void setFromAccount(Account fromAccount) {
+		this.fromAccount = fromAccount;
+	}
+
+	public Account getToAccount() {
+		return toAccount;
+	}
+
+	public void setToAccount(Account toAccount) {
+		this.toAccount = toAccount;
+	}
 
 	public long getTransactionId() {
 		return transactionId;
