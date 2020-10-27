@@ -25,6 +25,12 @@ AdminRepositoryImplementation set_status=new AdminRepositoryImplementation();
 		customer.setLastName("Doe");
 		customer.setStatus(set_status.customerApproval());
 		customer.setDateOfBirth(LocalDate.of(1978, 05, 31));
+		customer.setAadharNumber("123456789012");
+		customer.setCustomerEmailId("JohnDoe@gmail.com");
+		customer.setFatherName("Harry");
+		customer.setMobileNumber("9876543210");
+		customer.setCustomerPassword("John@123");
+		customer.setStatus("NA");
 		
 		
 		CustomerAddress customerAddress=new CustomerAddress();
@@ -43,6 +49,16 @@ AdminRepositoryImplementation set_status=new AdminRepositoryImplementation();
 	}
 	
 	@Test
+
+	public void loginCustomer(){
+		boolean logged=dao.LoginCustomer(1023, "John@123");
+		if(logged){
+			System.out.println("Logged in succesfully");
+		}else{
+			System.out.println("Login failed");
+		}
+	}
+
 	public void applyAsAdmin() {
 		Admin admin=new Admin();
 		admin.setAdminName("Mike");
@@ -52,6 +68,6 @@ AdminRepositoryImplementation set_status=new AdminRepositoryImplementation();
 		
 	}
 	
-	
+
 
 }
