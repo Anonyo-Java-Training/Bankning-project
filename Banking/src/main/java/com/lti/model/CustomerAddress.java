@@ -19,13 +19,16 @@ public class CustomerAddress {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="addrSeq")
 	long addressId;
 	
-	
 	@OneToOne
 	@JoinColumn(name="customer_id")
 	Customer customer;
 	
-	@Column(name="residential_address")
-	String residentialAddress;
+	@Column(name="residential_address_line_1")
+	String residentialAddressLine1;
+	
+
+	@Column(name="residential_address_line_2")
+	String residentialAddressLine2;
 	
 	@Column(name="residential_landmark")
 	String residentialLandmark;
@@ -39,8 +42,12 @@ public class CustomerAddress {
 	@Column(name="residential_pincode")
 	int residentialPincode;
 	
-	@Column(name="permanent_address")
-	String permanentAddress;
+	@Column(name="permanent_address_line_1")
+	String permanentAddressLine1;
+	
+
+	@Column(name="permanent_address_line_2")
+	String permanentAddressLine2;
 	
 	@Column(name="permanent_landmark")
 	String permanentLandmark;
@@ -56,12 +63,46 @@ public class CustomerAddress {
 
 
 
-	public String getResidentialAddress() {
-		return residentialAddress;
+
+
+	public long getAddressId() {
+		return addressId;
 	}
 
-	public void setResidentialAddress(String residentialAddress) {
-		this.residentialAddress = residentialAddress;
+	public void setAddressId(long addressId) {
+		this.addressId = addressId;
+	}
+
+	public String getResidentialAddressLine1() {
+		return residentialAddressLine1;
+	}
+
+	public void setResidentialAddressLine1(String residentialAddressLine1) {
+		this.residentialAddressLine1 = residentialAddressLine1;
+	}
+
+	public String getResidentialAddressLine2() {
+		return residentialAddressLine2;
+	}
+
+	public void setResidentialAddressLine2(String residentialAddressLine2) {
+		this.residentialAddressLine2 = residentialAddressLine2;
+	}
+
+	public String getPermanentAddressLine1() {
+		return permanentAddressLine1;
+	}
+
+	public void setPermanentAddressLine1(String permanentAddressLine1) {
+		this.permanentAddressLine1 = permanentAddressLine1;
+	}
+
+	public String getPermanentAddressLine2() {
+		return permanentAddressLine2;
+	}
+
+	public void setPermanentAddressLine2(String permanentAddressLine2) {
+		this.permanentAddressLine2 = permanentAddressLine2;
 	}
 
 	public String getResidentialLandmark() {
@@ -96,13 +137,7 @@ public class CustomerAddress {
 		this.residentialPincode = residentialPincode;
 	}
 
-	public String getPermanentAddress() {
-		return permanentAddress;
-	}
 
-	public void setPermanentAddress(String permanentAddress) {
-		this.permanentAddress = permanentAddress;
-	}
 
 	public String getPermanentLandmark() {
 		return permanentLandmark;
