@@ -56,7 +56,7 @@ ApplyACustomerDao dao=new ApplyACustomerDao();
 			System.out.println("Login failed");
 		}
 	}
-
+	@Test
 	public void applyAsAdmin() {
 		Admin admin=new Admin();
 		admin.setAdminName("Mike");
