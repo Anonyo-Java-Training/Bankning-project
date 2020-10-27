@@ -6,7 +6,9 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
+import com.lti.dao.AdminRepositoryImplementation;
 import com.lti.dao.ApplyACustomerDao;
+import com.lti.model.Admin;
 import com.lti.model.Customer;
 import com.lti.model.CustomerAddress;
 import com.lti.model.CustomerOccupation;
@@ -36,6 +38,16 @@ ApplyACustomerDao dao=new ApplyACustomerDao();
 		customerOccupation.setCustomer(customer);
 		
 		dao.addACustomerAndAddressAndOccupation(customer);
+	}
+	
+	@Test
+	public void applyAsAdmin() {
+		Admin admin=new Admin();
+		admin.setAdminName("Mike");
+		admin.setAdminPassword("Mike@1234");
+		AdminRepositoryImplementation repo=new AdminRepositoryImplementation();
+		repo.addAnAdmin(admin);
+		
 	}
 	
 	

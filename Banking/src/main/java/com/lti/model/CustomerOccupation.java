@@ -9,8 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-
+//branch 'master' of https://github.com/Anonyo-Java-Training/Bankning-project.git
 @Entity
 @Table(name="tbl_customer_occupation")
 public class CustomerOccupation{
