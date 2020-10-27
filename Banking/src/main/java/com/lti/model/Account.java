@@ -25,7 +25,7 @@ public class Account {
 	private long acccountNumber;
 
 	@Column(name = "account_type")
-	private String accountType;
+	private AccountType accountType;
 	@Column(name = "account_opening_date")
 	private LocalDate accountOpeningDate;
 	@Column(name = "account_balance")
@@ -64,11 +64,11 @@ public class Account {
 		this.acccountNumber = acccountNumber;
 	}
 
-	public String getAccountType() {
+	public AccountType getAccountType() {
 		return accountType;
 	}
 
-	public void setAccountType(String accountType) {
+	public void setAccountType(AccountType accountType) {
 		this.accountType = accountType;
 	}
 
@@ -103,5 +103,31 @@ public class Account {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public InternetBanking getInternetBanking() {
+		return internetBanking;
+	}
+
+	public void setInternetBanking(InternetBanking internetBanking) {
+		this.internetBanking = internetBanking;
+	}
+
+	public List<Beneficiary> getBeneficiaries() {
+		return beneficiaries;
+	}
+
+	public void setBeneficiaries(List<Beneficiary> beneficiaries) {
+		this.beneficiaries = beneficiaries;
+	}
+
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
+	
+	
 
 }
