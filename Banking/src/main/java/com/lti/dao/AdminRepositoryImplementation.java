@@ -6,6 +6,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import com.lti.model.Admin;
+import com.lti.model.AdminApprovalType;
+import com.lti.model.Customer;
 
 public class AdminRepositoryImplementation {
 	EntityManagerFactory emf;
@@ -23,6 +25,10 @@ public class AdminRepositoryImplementation {
 		em.merge(admin);
 		tx.commit();
 		System.out.println("New Admin Added");
+	}
+	
+	public String customerApproval() {
+		return "Accepted";
 	}
 	
 	

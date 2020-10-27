@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.lti.dao.AdminRepositoryImplementation;
+
 @Entity
 @Table(name="tbl_customers")
 public class Customer {

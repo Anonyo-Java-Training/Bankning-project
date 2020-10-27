@@ -16,12 +16,14 @@ import com.lti.model.CustomerOccupation;
 public class BankingTest {
 
 ApplyACustomerDao dao=new ApplyACustomerDao();
+AdminRepositoryImplementation set_status=new AdminRepositoryImplementation();
 	
 	@Test
 	public void applyForBankAccount(){
 		Customer customer=new Customer();
 		customer.setFirstName("John");
 		customer.setLastName("Doe");
+		customer.setStatus(set_status.customerApproval());
 		customer.setDateOfBirth(LocalDate.of(1978, 05, 31));
 		
 		
