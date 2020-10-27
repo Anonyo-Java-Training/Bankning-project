@@ -3,24 +3,27 @@ package com.lti.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbl_beneficiary")
+@Table(name = "tbl_beneficiary")
 
 public class Beneficiary {
 	@Id
-	@Column(name="beneficiary_account_number")
-	long beneficiaryAccountNumber;  //PK
-	
-	@Column(name="beneficiary_ifsc")
+	@Column(name = "beneficiary_account_number")
+	long beneficiaryAccountNumber; // PK
+
+	@Column(name = "beneficiary_ifsc")
 	String beneficiaryIfsc;
-	
-	@Column(name="beneficiary_account_name")
+
+	@Column(name = "beneficiary_account_name")
 	String beneficiaryAccountName;
-	
-	@Column(name="account_number")
-	long accountNumber;  //fk
+
+	@ManyToOne
+	@JoinColumn(name = "account_number")
+	Account account;
 
 	public long getBeneficiaryAccountNumber() {
 		return beneficiaryAccountNumber;
@@ -46,18 +49,12 @@ public class Beneficiary {
 		this.beneficiaryAccountName = beneficiaryAccountName;
 	}
 
-	public long getAccountNumber() {
-		return accountNumber;
+	public Account getAccount() {
+		return account;
 	}
 
-	public void setAccountNumber(long accountNumber) {
-		this.accountNumber = accountNumber;
+	public void setAccount(Account account) {
+		this.account = account;
 	}
-	
-	
-	
-	
-	
-	
 
 }

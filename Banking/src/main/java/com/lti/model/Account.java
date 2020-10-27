@@ -1,6 +1,7 @@
 package com.lti.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -36,9 +38,15 @@ public class Account {
 	@OneToOne
 	@JoinColumn(name = "customer_id")
 	Customer customer;
-	
-	@OneToOne(mappedBy="account",cascade=CascadeType.ALL)
+
+	@OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
 	InternetBanking internetBanking;
+
+	@OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+	List<Beneficiary> beneficiaries;
+
+	@OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+	List<Transaction> transactions;
 
 	public Customer getCustomer() {
 		return customer;
