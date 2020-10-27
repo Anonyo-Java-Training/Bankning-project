@@ -4,8 +4,11 @@ import java.time.LocalDate;
 
 import com.lti.dao.AccountRepositiory;
 import com.lti.dao.AccountRepositoryImplementation;
+import com.lti.dao.InternetBankingImplementation;
+import com.lti.dao.InternetBankingRepositiory;
 import com.lti.model.Account;
 import com.lti.model.AccountType;
+import com.lti.model.InternetBanking;
 
 public class MainTest {
 	public static void main(String[] args) {
@@ -17,7 +20,15 @@ public class MainTest {
 //		account.setIfscCode("TWQAS7876");
 //		account.setStatus("active");
 //		dao.createAccount(account);
-		System.out.println("hello");
+		System.out.println("hellooo");
+		InternetBanking ib=new InternetBanking();
+	//	ib.setPassword("lti");
+		
+		InternetBankingImplementation ibr=new InternetBankingImplementation();
+		ibr.addIBanking(ib);
+		
+		
+		
 
 	}
 
