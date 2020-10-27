@@ -10,7 +10,7 @@ import com.lti.model.Admin;
 import com.lti.model.AdminApprovalType;
 import com.lti.model.Customer;
 
-public class AdminRepositoryImplementation {
+public class AdminRepositoryImplementation implements AdminRepository  {
 	EntityManagerFactory emf;
 	EntityManager em;
 	EntityTransaction tx;
@@ -29,7 +29,8 @@ public class AdminRepositoryImplementation {
 	}
 	
 	public String customerApproval() {
-		return "Accepted";
+		AdminApprovalType approval=AdminApprovalType.Pending;
+		return (approval.name());
 	}
 	
 	public boolean adminLogin(long adminId, String adminPassword){

@@ -1,5 +1,5 @@
 package com.lti.model;
 
 public enum AdminApprovalType {
-	Rejected,Accepted
+	Rejected,Accepted,Pending
 }
