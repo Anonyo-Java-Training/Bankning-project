@@ -23,11 +23,11 @@ public class CustomerAddress {
 	@JoinColumn(name="customer_id")
 	Customer customer;
 	
-	@Column(name="residential_address_line1")
+	@Column(name="residential_address_line_1")
 	String residentialAddressLine1;
 	
 
-	@Column(name="residential_address_line2")
+	@Column(name="residential_address_line_2")
 	String residentialAddressLine2;
 	
 	@Column(name="residential_landmark")
@@ -42,11 +42,11 @@ public class CustomerAddress {
 	@Column(name="residential_pincode")
 	int residentialPincode;
 	
-	@Column(name="permanent_address_line1")
+	@Column(name="permanent_address_line_1")
 	String permanentAddressLine1;
 	
 
-	@Column(name="permanent_address_line2")
+	@Column(name="permanent_address_line_2")
 	String permanentAddressLine2;
 	
 	@Column(name="permanent_landmark")
