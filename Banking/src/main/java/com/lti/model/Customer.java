@@ -56,6 +56,9 @@ public class Customer {
 	
 	@OneToOne(mappedBy="customer", cascade=CascadeType.ALL)
 	CustomerOccupation occupation;
+	
+	@OneToOne(mappedBy="customer", cascade=CascadeType.ALL)
+	Account account; 
 
 	public long getCustomerId() {
 		return customerId;
@@ -63,6 +66,14 @@ public class Customer {
 
 	public void setCustomerId(long customerId) {
 		this.customerId = customerId;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	public String getFirstName() {
