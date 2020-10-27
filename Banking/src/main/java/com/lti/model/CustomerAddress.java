@@ -19,7 +19,6 @@ public class CustomerAddress {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="addrSeq")
 	long addressId;
 	
-	
 	@OneToOne
 	@JoinColumn(name="customer_id")
 	Customer customer;

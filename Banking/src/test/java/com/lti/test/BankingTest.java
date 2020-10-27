@@ -21,6 +21,12 @@ ApplyACustomerDao dao=new ApplyACustomerDao();
 		customer.setFirstName("John");
 		customer.setLastName("Doe");
 		customer.setDateOfBirth(LocalDate.of(1978, 05, 31));
+		customer.setAadharNumber("123456789012");
+		customer.setCustomerEmailId("JohnDoe@gmail.com");
+		customer.setFatherName("Harry");
+		customer.setMobileNumber("9876543210");
+		customer.setCustomerPassword("John@123");
+		customer.setStatus("NA");
 		
 		
 		CustomerAddress customerAddress=new CustomerAddress();
@@ -38,6 +44,14 @@ ApplyACustomerDao dao=new ApplyACustomerDao();
 		dao.addACustomerAndAddressAndOccupation(customer);
 	}
 	
-	
+	@Test
+	public void loginCustomer(){
+		boolean logged=dao.LoginCustomer(1023, "John@123");
+		if(logged){
+			System.out.println("Logged in succesfully");
+		}else{
+			System.out.println("Login failed");
+		}
+	}
 
 }
