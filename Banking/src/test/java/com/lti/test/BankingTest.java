@@ -37,5 +37,7 @@ ApplyACustomerDao dao=new ApplyACustomerDao();
 		
 		dao.addACustomerAndAddressAndOccupation(customer);
 	}
+	
+	
 
 }
