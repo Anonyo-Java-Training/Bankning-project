@@ -6,7 +6,9 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
+import com.lti.dao.AdminRepositoryImplementation;
 import com.lti.dao.ApplyACustomerDao;
+import com.lti.model.Admin;
 import com.lti.model.Customer;
 import com.lti.model.CustomerAddress;
 import com.lti.model.CustomerOccupation;
@@ -45,6 +47,7 @@ ApplyACustomerDao dao=new ApplyACustomerDao();
 	}
 	
 	@Test
+
 	public void loginCustomer(){
 		boolean logged=dao.LoginCustomer(1023, "John@123");
 		if(logged){
@@ -53,5 +56,16 @@ ApplyACustomerDao dao=new ApplyACustomerDao();
 			System.out.println("Login failed");
 		}
 	}
+
+	public void applyAsAdmin() {
+		Admin admin=new Admin();
+		admin.setAdminName("Mike");
+		admin.setAdminPassword("Mike@1234");
+		AdminRepositoryImplementation repo=new AdminRepositoryImplementation();
+		repo.addAnAdmin(admin);
+		
+	}
+	
+
 
 }

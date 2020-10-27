@@ -7,29 +7,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbl_transaction")
+@Table(name = "tbl_transaction")
 public class Transaction {
 	@Id
-	@SequenceGenerator(name="transSeq", initialValue=1001, allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="transSeq")
-	@Column(name="transaction_id")
-	long transactionId;   //PK
-	
-	@Column(name="transaction_date")
+	@SequenceGenerator(name = "transSeq", initialValue = 1001, allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "transSeq")
+	@Column(name = "transaction_id")
+	long transactionId; // PK
+
+	@Column(name = "transaction_date")
 	LocalDate transactionDate;
-	
-	@Column(name="transaction_detail")
+
+	@Column(name = "transaction_detail")
 	String transactionDetail;
-	
-	@Column(name="account_number")
-	long accountNumber;  //FK
-	
-	@Column(name="debit_credit")
+
+	@Column(name = "debit_credit")
 	DebitCredit debitedOrCredited;
+
+	@ManyToOne
+	@JoinColumn(name = "account_number")
+	Account account;
 
 	public long getTransactionId() {
 		return transactionId;
@@ -55,12 +58,12 @@ public class Transaction {
 		this.transactionDetail = transactionDetail;
 	}
 
-	public long getAccountNumber() {
-		return accountNumber;
+	public Account getAccount() {
+		return account;
 	}
 
-	public void setAccountNumber(long accountNumber) {
-		this.accountNumber = accountNumber;
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	public DebitCredit getDebitedOrCredited() {
@@ -70,7 +73,5 @@ public class Transaction {
 	public void setDebitedOrCredited(DebitCredit debitedOrCredited) {
 		this.debitedOrCredited = debitedOrCredited;
 	}
-	
-	
 
 }
