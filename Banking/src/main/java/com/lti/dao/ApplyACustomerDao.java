@@ -34,7 +34,7 @@ public class ApplyACustomerDao {
 		Customer acc=(Customer)query.getResultList().stream().findFirst().orElse(null);
         if(acc!=null)
             return true;
-        else
+        else 
             return false;
 	}
 }
