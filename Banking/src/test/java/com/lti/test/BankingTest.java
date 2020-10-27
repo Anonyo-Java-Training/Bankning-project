@@ -31,7 +31,6 @@ AdminRepositoryImplementation repo=new AdminRepositoryImplementation();
 		customer.setFatherName("Harry");
 		customer.setMobileNumber("9876543210");
 		customer.setCustomerPassword("John@123");
-		customer.setStatus("NA");
 		
 		
 		CustomerAddress customerAddress=new CustomerAddress();
